@@ -22,6 +22,13 @@ You ride a bicycle through a parkour course and try to beat your own best run. A
 I direct the design and every decision (what to build, what feels wrong, what to cut), test in Play mode, and give feedback; the Lua is written with AI assistance. Every feature above was verified in a live session, not assumed.
 
 ## What's here
-- `scripts/` — Lua scripts (track generation, ghost replay, momentum, HUD)
-- `media/` — gameplay clip and screenshots
-- `devlog/` — notes from build sessions
+- `DSRServer.luau` — main server loop: world setup, track generation (`regenerate`, `buildSections`, `ensureReachable`), bike build, run/crash/finish logic, slab collapse (`armSlab`)
+- `DSRClient.luau` — client: bike simulation, camera, HUD, momentum bar, ghost/pace display (2,100+ lines)
+- `DSRConfig.luau` — all tunable game settings
+- `DSRData.luau` — player data, autosave, bind-to-close
+- `DSRChallenges.luau` — challenge/goal system
+- `DSRLeaderboard.luau` — global leaderboard
+- `DSRMonetization.luau` — shop and receipts
+- `DSRAnalytics.luau` — lifecycle/analytics events
+- `DSRSelfTest.luau` — automated self-checks
+- Working title in the code: "Don't Stop Riding" (the `DSR` prefix)
